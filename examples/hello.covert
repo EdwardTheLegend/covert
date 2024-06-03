@@ -1,0 +1,24 @@
+Agency {
+    "hello",
+    employs "Random",
+    employs "Terminal",
+}
+
+? this is a comment
+
+? variables
+suspect name <= Terminal.input("What is your name?")
+suspect age <= Random.randint(1, 100)
+
+? iteration works with an agent and a stakeout
+agent countdown expects i {
+    Terminal.print(i)
+}
+stakeout [1,2,3,4] countdown
+
+? conditionals
+investigate ( age > 60 ) then {
+    Terminal.print("You are old")
+} fallback {
+    Terminal.print("You are young")
+}

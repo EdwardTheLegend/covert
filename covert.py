@@ -1,7 +1,7 @@
 import argparse
-from vparser import Parser
-from vinterpreter import Interpreter
-from vlexer import Lexer
+from cparser import Parser
+from cinterpreter import Interpreter
+from clexer import Lexer
 
 parser = argparse.ArgumentParser(prog="vin", description="Vin programming language")
 parser.add_argument("file", type=str, help="Vin source code file", required=False)
