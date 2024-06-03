@@ -1,20 +1,24 @@
-Agency {
-    "hello",
-    employs "Random",
-    employs "Terminal",
-}
+Agency "hello"
+
+employs "Random",
+employs "Terminal",
 
 ? this is a comment
 
 ? variables
-suspect name <= Terminal.input("What is your name?")
-suspect age <= Random.randint(1, 100)
+suspect name possibly Terminal.input("What is your name?")
+suspect age possibly Random.randint(1, 100)
 
-? iteration works with an agent and a stakeout
+? count controlled iteration works with an agent and a stakeout
 agent countdown expects i {
     Terminal.print(i)
 }
 stakeout [1,2,3,4] countdown
+
+? condition controlled iteration
+surveillance until (Random.randint(1,100) > 90) {
+    Terminal.print("Random number is less than 90")
+}
 
 ? conditionals
 investigate ( age > 60 ) then {
