@@ -1,7 +1,7 @@
 Agency "hello"
 
-employs "Random",
-employs "Terminal",
+employs "Random"
+employs "Terminal"
 
 ? this is a comment
 
