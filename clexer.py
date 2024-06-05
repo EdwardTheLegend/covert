@@ -12,6 +12,7 @@ class TOKENS:
     Identifier = "Identifier"
     String = "String"
     Number = "Number"
+    Boolean = "Boolean"
     Or = "Or"
     Not = "Not"
     And = "And"
@@ -124,6 +125,8 @@ class Lexer:
 
         if identifier in KEYWORDS:
             self.tokens.append(Token(TOKENS.Keyword, identifier, identifier, self.line, column))
+        elif identifier == "true" or identifier == "false":
+            self.tokens.append(Token(TOKENS.Boolean, identifier, identifier == "true", self.line, column))
         else:
             self.tokens.append(Token(TOKENS.Identifier, identifier, identifier, self.line, column))
 
@@ -176,7 +179,7 @@ class Lexer:
                     while self.peek().isdigit() or (self.peek() == "." and self.peekn(1).isdigit()):
                         number += self.advance()
 
-                    self.tokens.append(Token(TOKENS.Number, number, number, self.line, self.column))
+                    self.tokens.append(Token(TOKENS.Number, number, float(number), self.line, self.column))
                 elif char.isalpha() or char == "_":
                     self.start_identifier(char)
                 else:
