@@ -104,3 +104,15 @@ class Unary:
         self.type = "Unary"
         self.operator = operator
         self.apply = apply
+
+
+class Agency:
+    def __init__(self, name, body):
+        self.type = "Agency"
+        self.name = name
+
+
+class Employs:
+    def __init__(self, name, params, body):
+        self.type = "Employs"
+        self.name = name
