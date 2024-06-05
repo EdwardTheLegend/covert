@@ -91,9 +91,9 @@ class Parser:
                 return agency()
             case "employs":
                 return employs()
-            case "report":
+            case "agent":
                 return functions()
-            case "investigate":
+            case "report":
                 return returns()
             case _:
                 return self.expression()
